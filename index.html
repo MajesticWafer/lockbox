@@ -3,119 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
   <style>
     .container {
-      display: flex;
-      overflow-x: auto;
-      width: 100%;
-      background-color: #f5deb3; /* Light brown */
-      border: 2px solid #8b4513; /* Dark brown */
+      margin: 20px auto;
+      padding: 20px;
+      width: 80%;
+      background-color: #f2f2f2;
+      border-radius: 10px;
     }
-    .cypher {
-      display: flex;
-      flex-direction: column;
-      margin-right: 7px; /* Spacing between cypher rows */
+
+    .question {
+      margin-bottom: 20px;
     }
-    .row {
-      display: flex;
+
+    button {
+      margin-top: 10px;
     }
-    .letter {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-left: 0px solid #8b4513; /* Dark brown */
-      border-right: 0px solid #8b4513; /* Dark brown */
-      border-top: 0px solid #8b4513; /* Dark brown */
-      border-bottom: 0px solid #8b4513; /* Dark brown */
-      width: 40px;
-      height: 40px;
-      background-color: #d2b48c; /* Brown */
+
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="cypher">
-      <div class="row">
-        <div class="letter">A</div>
-        <div class="letter">B</div>
-        <div class="letter">C</div>
-        <div class="letter">D</div>
-        <div class="letter">E</div>
-        <div class="letter">F</div>
-        <div class="letter">G</div>
-        <div class="letter">H</div>
-        <div class="letter">I</div>
-        <div class="letter">J</div>
-        <div class="letter">K</div>
-        <div class="letter">L</div>
-        <div class="letter">M</div>
-        <div class="letter">N</div>
-        <div class="letter">O</div>
-        <div class="letter">P</div>
-        <div class="letter">Q</div>
-        <div class="letter">R</div>
-        <div class="letter">S</div>
-        <div class="letter">T</div>
-        <div class="letter">U</div>
-        <div class="letter">V</div>
-        <div class="letter">W</div>
-        <div class="letter">X</div>
-        <div class="letter">Y</div>
-        <div class="letter">Z</div>
-        <div class="letter">0</div>
-        <div class="letter">1</div>
-        <div class="letter">2</div>
-        <div class="letter">3</div>
-        <div class="letter">4</div>
-        <div class="letter">5</div>
-        <div class="letter">6</div>
-        <div class="letter">7</div>
-        <div class="letter">8</div>
-        <div class="letter">9</div>
-      </div>
+    <div id="question1" class="question">
+      <p>Question 1: What is 2 + 2?</p>
+      <input type="radio" name="q1" value="1"> a) 3<br>
+      <input type="radio" name="q1" value="2"> b) 4<br>
+      <input type="radio" name="q1" value="3"> c) 5<br>
+      <input type="radio" name="q1" value="4"> d) 6<br>
+      <button onclick="checkAnswer(1)">Next Question</button>
     </div>
-    <div class="cypher">
-      <div class="row">
-        <div class="letter">A</div>
-        <div class="letter">B</div>
-        <div class="letter">C</div>
-        <div class="letter">D</div>
-        <div class="letter">E</div>
-        <div class="letter">F</div>
-        <div class="letter">G</div>
-        <div class="letter">H</div>
-        <div class="letter">I</div>
-        <div class="letter">J</div>
-        <div class="letter">K</div>
-        <div class="letter">L</div>
-        <div class="letter">M</div>
-        <div class="letter">N</div>
-        <div class="letter">O</div>
-        <div class="letter">P</div>
-        <div class="letter">Q</div>
-        <div class="letter">R</div>
-        <div class="letter">S</div>
-        <div class="letter">T</div>
-        <div class="letter">U</div>
-        <div class="letter">V</div>
-        <div class="letter">W</div>
-        <div class="letter">X</div>
-        <div class="letter">Y</div>
-        <div class="letter">Z</div>
-        <div class="letter">0</div>
-        <div class="letter">1</div>
-        <div class="letter">2</div>
-        <div class="letter">3</div>
-        <div class="letter">4</div>
-        <div class="letter">5</div>
-        <div class="letter">6</div>
-        <div class="letter">7</div>
-        <div class="letter">8</div>
-        <div class="letter">9</div>
-      </div>
+    <div id="question2" class="question">
+      <p>Question 2: What is the capital of France?</p>
+      <input type="radio" name="q2" value="1"> a) Paris<br>
+      <input type="radio" name="q2" value="2"> b) Rome<br>
+      <input type="radio" name="q2" value="3"> c) London<br>
+      <input type="radio" name="q2" value="4"> d) Berlin<br>
+      <button onclick="checkAnswer(2)" disabled>Next Question</button>
     </div>
+    <div id="question3" class="question">
+      <p>Question 3: What is the largest mammal?</p>
+      <input type="radio" name="q3" value="1"> a) Elephant<br>
+      <input type="radio" name="q3" value="2"> b) Blue Whale<br>
+      <input type="radio" name="q3" value="3"> c) Giraffe<br>
+      <input type="radio" name="q3" value="4"> d) Polar Bear<br>
+      <button onclick="checkAnswer(3)" disabled>Next Question</button>
+    </div>
+    <div id="question4" class="question">
+      <p>Question 4: What is the symbol for Gold?</p>
+      <input type="radio" name="q4" value="1"> a) Fe<br>
+      <input type="radio" name="q4" value="2"> b) Au<br>
+      <input type="radio" name="q4" value="3"> c) Ag<br>
+      <input type="radio" name="q4" value="4"> d) Hg<br>
+      <button onclick="checkAnswer(4)" disabled>Submit</button>
+    </div>
+    <div id="result"></div>
   </div>
+  <script>
+    let score = 0;
+    let currentQuestion = 1;
+
+    function checkAnswer(questionNumber) {
+      const selectedAnswer = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+
+      if (!selectedAnswer) {
+        alert('Please select an answer.');
+        return;
+      }
+
+      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 2 : 2;
+      
+      if (selectedAnswer.value == correctAnswer) {
+        score++;
+      }
+
+      const currentQuestionDiv = document.getElementById(`question${questionNumber}`);
+      currentQuestionDiv.style.display = 'none';
+
+      const nextQuestionDiv = document.getElementById(`question${questionNumber + 1}`);
+      nextQuestionDiv.style.display = 'block';
+
+      const nextQuestionButton = nextQuestionDiv.querySelector('button');
+      nextQuestionButton.disabled = false;
+
+      if (questionNumber === 4) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.textContent = `Your score is ${score}/4`;
+      }
+    }
+  </script>
 </body>
 </html>
