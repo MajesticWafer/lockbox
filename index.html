@@ -22,6 +22,7 @@
       background-color: #ffffff;
       border-radius: 10px;
       border: 1px solid #dbdce0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .question {
@@ -42,6 +43,7 @@
     #result {
       font-weight: bold;
       margin-top: 20px;
+      color: #673bb8;
     }
   </style>
 </head>
@@ -109,7 +111,22 @@
 
       if (questionNumber === 4) {
         const resultDiv = document.getElementById('result');
-        resultDiv.textContent = `Your score is ${score}/4`;
+        const percent = Math.round((score / 4) * 100);
+        let grade;
+
+        if (percent >= 90) {
+          grade = 'A';
+        } else if (percent >= 80) {
+          grade = 'B';
+        } else if (percent >= 70) {
+          grade = 'C';
+        } else if (percent >= 60) {
+          grade = 'D';
+        } else {
+          grade = 'F';
+        }
+
+        resultDiv.textContent = `Your score is ${score}/4 (${percent}%), Grade: ${grade}`;
       }
     }
   </script>
