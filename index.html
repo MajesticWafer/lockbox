@@ -1,69 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Side-Scrolling Cipher</title>
+    <title>Cipher</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        #cipher-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
-        .cipher-line-container {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
+        .container {
+            width: 500px;
+            height: 100px;
+            overflow-x: scroll;
             white-space: nowrap;
-            font-family: monospace;
-            font-size: 30px;
         }
-        .cipher-line {
-            display: inline;
+
+        .row {
+            display: inline-block;
+            width: 100%;
         }
-        .cipher-line.offset {
-            padding-left: 7ch;
+
+        .mask {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 50px;
+        }
+
+        .bottom-row {
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     </style>
 </head>
 <body>
-    <div id="cipher-container">
-        <div class="cipher-line-container">
-            <div class="cipher-line">ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</div>
-            <div class="cipher-line offset">ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</div>
-        </div>
-        <div class="cipher-line-container">
-            <div class="cipher-line">ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</div>
-            <div class="cipher-line offset">ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</div>
+    <div class="container">
+        <div class="row">
+            <div class="mask">
+                <div class="top-row">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9</div>
+                <div class="bottom-row">H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9 A B C D E F G</div>
+            </div>
         </div>
     </div>
-    <script>
-        const cipherContainer = document.getElementById('cipher-container');
-        const cipherLineContainers = Array.from(cipherContainer.getElementsByClassName('cipher-line-container'));
-
-        function updateCipher() {
-            cipherLineContainers.forEach(container => {
-                const left = parseInt(container.style.left) || 0;
-                const newLeft = left - 1; // adjust the speed as needed
-                container.style.left = newLeft + 'px';
-                if (newLeft <= -container.offsetWidth / 2) {
-                    container.style.left = (container.offsetWidth / 2) + 'px';
-                }
-                else if (newLeft >= container.offsetWidth / 2) {
-                    container.style.left = (-container.offsetWidth / 2) + 'px';
-                }
-            });
-        }
-
-        setInterval(updateCipher, 1000 / 60); // 60 fps
-    </script>
 </body>
 </html>
