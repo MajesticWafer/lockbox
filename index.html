@@ -26,9 +26,44 @@
     }
 
     .question {
-      display: none;
+      position: relative;
       margin-bottom: 20px;
       color: #777c7f;
+      overflow: hidden;
+    }
+
+    .question.hidden {
+      display: none;
+    }
+
+    .question.hidden.in {
+      animation: slideIn 0.5s forwards;
+    }
+
+    .question.hidden.out {
+      animation: slideOut 0.5s forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
     }
 
     button {
@@ -51,7 +86,7 @@
 </head>
 <body>
   <div class="container">
-    <div id="question1" class="question" style="display: block;">
+    <div id="question1" class="question">
       <p>Question 1: What is 2 + 2?</p>
       <input type="radio" name="q1" value="1"> a) 3<br>
       <input type="radio" name="q1" value="2"> b) 4<br>
@@ -59,7 +94,7 @@
       <input type="radio" name="q1" value="4"> d) 6<br>
       <button onclick="checkAnswer(1)">Next Question</button>
     </div>
-    <div id="question2" class="question">
+    <div id="question2" class="question hidden">
       <p>Question 2: What is the capital of France?</p>
       <input type="radio" name="q2" value="1"> a) Paris<br>
       <input type="radio" name="q2" value="2"> b) Rome<br>
@@ -67,7 +102,7 @@
       <input type="radio" name="q2" value="4"> d) Berlin<br>
       <button onclick="checkAnswer(2)" disabled>Next Question</button>
     </div>
-    <div id="question3" class="question">
+    <div id="question3" class="question hidden">
       <p>Question 3: What is the largest mammal?</p>
       <input type="radio" name="q3" value="1"> a) Elephant<br>
       <input type="radio" name="q3" value="2"> b) Blue Whale<br>
@@ -75,7 +110,7 @@
       <input type="radio" name="q3" value="4"> d) Polar Bear<br>
       <button onclick="checkAnswer(3)" disabled>Next Question</button>
     </div>
-    <div id="question4" class="question">
+    <div id="question4" class="question hidden">
       <p>Question 4: What is the symbol for Gold?</p>
       <input type="radio" name="q4" value="1"> a) Fe<br>
       <input type="radio" name="q4" value="2"> b) Au<br>
@@ -103,11 +138,11 @@
       }
 
       const currentQuestionDiv = document.getElementById(`question${questionNumber}`);
-      currentQuestionDiv.style.display = 'none';
+      currentQuestionDiv.classList.add('out');
 
       const nextQuestionDiv = document.getElementById(`question${questionNumber + 1}`);
       if (nextQuestionDiv) {
-        nextQuestionDiv.style.display = 'block';
+        nextQuestionDiv.classList.add('in');
         const nextQuestionButton = nextQuestionDiv.querySelector('button');
         nextQuestionButton.disabled = false;
       } else {
