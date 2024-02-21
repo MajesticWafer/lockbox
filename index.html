@@ -26,6 +26,18 @@
       transition: opacity 0.5s, transform 0.5s;
     }
 
+    .header-container {
+      margin-bottom: 20px;
+      padding: 20px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #dbdce0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      color: #777c7f;
+    }
+
     .question {
       display: none;
       margin-bottom: 20px;
@@ -82,6 +94,9 @@
   </style>
 </head>
 <body>
+  <div class="header-container">
+    <h1 style="text-align: center; color: #777c7f;">Lockbox Challenge</h1>
+  </div>
   <div class="container">
     <div id="question1" class="question fade-in" style="display: block;">
       <p>Question 1: What is 2 + 2?</p>
@@ -147,6 +162,38 @@
       <input type="radio" name="q8" value="4"> d) Lhotse<br>
       <button onclick="checkAnswer(8)" disabled>Submit</button>
     </div>
+    <div id="question9" class="question fade-out">
+      <p>Question 9: What is the largest ocean on Earth?</p>
+      <input type="radio" name="q9" value="1"> a) Atlantic Ocean<br>
+      <input type="radio" name="q9" value="2"> b) Indian Ocean<br>
+      <input type="radio" name="q9" value="3"> c) Arctic Ocean<br>
+      <input type="radio" name="q9" value="4"> d) Pacific Ocean<br>
+      <button onclick="checkAnswer(9)" disabled>Next Question</button>
+    </div>
+    <div id="question10" class="question fade-out">
+      <p>Question 10: What is the largest desert in the world?</p>
+      <input type="radio" name="q10" value="1"> a) Sahara Desert<br>
+      <input type="radio" name="q10" value="2"> b) Arabian Desert<br>
+      <input type="radio" name="q10" value="3"> c) Gobi Desert<br>
+      <input type="radio" name="q10" value="4"> d) Kalahari Desert<br>
+      <button onclick="checkAnswer(10)" disabled>Next Question</button>
+    </div>
+    <div id="question11" class="question fade-out">
+      <p>Question 11: What is the largest rainforest in the world?</p>
+      <input type="radio" name="q11" value="1"> a) Amazon Rainforest<br>
+      <input type="radio" name="q11" value="2"> b) Congo Rainforest<br>
+      <input type="radio" name="q11" value="3"> c) Valdivian Rainforest<br>
+      <input type="radio" name="q11" value="4"> d) Daintree Rainforest<br>
+      <button onclick="checkAnswer(11)" disabled>Next Question</button>
+    </div>
+    <div id="question12" class="question fade-out">
+      <p>Question 12: What is the largest country in the world by land area?</p>
+      <input type="radio" name="q12" value="1"> a) Russia<br>
+      <input type="radio" name="q12" value="2"> b) Canada<br>
+      <input type="radio" name="q12" value="3"> c) China<br>
+      <input type="radio" name="q12" value="4"> d) United States<br>
+      <button onclick="checkAnswer(12)" disabled>Submit</button>
+    </div>
     <div id="result"></div>
   </div>
   <script>
@@ -160,7 +207,7 @@
         return;
       }
 
-      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 2 : questionNumber === 4 ? 2 : questionNumber === 5 ? 2 : questionNumber === 6 ? 2 : questionNumber === 7 ? 1 : 1;
+      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 2 : questionNumber === 4 ? 2 : questionNumber === 5 ? 2 : questionNumber === 6 ? 2 : questionNumber === 7 ? 1 : questionNumber === 8 ? 1 : questionNumber === 9 ? 4 : questionNumber === 10 ? 1 : questionNumber === 11 ? 1 : 1;
       
       if (selectedAnswer.value == correctAnswer) {
         score++;
@@ -180,7 +227,7 @@
           nextQuestionButton.disabled = false;
         } else {
           const resultDiv = document.getElementById('result');
-          const percent = Math.round((score / 8) * 100);
+          const percent = Math.round((score / 12) * 100);
           let grade;
 
           if (percent >= 90) {
@@ -195,7 +242,7 @@
             grade = 'F';
           }
 
-          resultDiv.textContent = `Your score is ${score}/8 (${percent}%), Grade: ${grade}`;
+          resultDiv.textContent = `Your score is ${score}/12 (${percent}%), Grade: ${grade}`;
         }
       });
     }
