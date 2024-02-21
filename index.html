@@ -137,6 +137,9 @@
       const currentQuestionDiv = document.getElementById(`question${questionNumber}`);
       currentQuestionDiv.classList.remove('fade-in');
       currentQuestionDiv.classList.add('fade-out');
+      currentQuestionDiv.addEventListener('animationend', function() {
+        currentQuestionDiv.style.display = 'none';
+      });
 
       const nextQuestionDiv = document.getElementById(`question${questionNumber + 1}`);
       if (nextQuestionDiv) {
