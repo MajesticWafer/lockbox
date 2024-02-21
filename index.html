@@ -104,12 +104,11 @@
       currentQuestionDiv.style.display = 'none';
 
       const nextQuestionDiv = document.getElementById(`question${questionNumber + 1}`);
-      nextQuestionDiv.style.display = 'block';
-
-      const nextQuestionButton = nextQuestionDiv.querySelector('button');
-      nextQuestionButton.disabled = false;
-
-      if (questionNumber === 4) {
+      if (nextQuestionDiv) {
+        nextQuestionDiv.style.display = 'block';
+        const nextQuestionButton = nextQuestionDiv.querySelector('button');
+        nextQuestionButton.disabled = false;
+      } else {
         const resultDiv = document.getElementById('result');
         const percent = Math.round((score / 4) * 100);
         let grade;
