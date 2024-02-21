@@ -115,6 +115,38 @@
       <input type="radio" name="q4" value="4"> d) Hg<br>
       <button onclick="checkAnswer(4)" disabled>Submit</button>
     </div>
+    <div id="question5" class="question fade-out">
+      <p>Question 5: What is the capital of Italy?</p>
+      <input type="radio" name="q5" value="1"> a) Paris<br>
+      <input type="radio" name="q5" value="2"> b) Rome<br>
+      <input type="radio" name="q5" value="3"> c) London<br>
+      <input type="radio" name="q5" value="4"> d) Berlin<br>
+      <button onclick="checkAnswer(5)" disabled>Next Question</button>
+    </div>
+    <div id="question6" class="question fade-out">
+      <p>Question 6: What is the largest planet in our solar system?</p>
+      <input type="radio" name="q6" value="1"> a) Earth<br>
+      <input type="radio" name="q6" value="2"> b) Jupiter<br>
+      <input type="radio" name="q6" value="3"> c) Saturn<br>
+      <input type="radio" name="q6" value="4"> d) Mars<br>
+      <button onclick="checkAnswer(6)" disabled>Next Question</button>
+    </div>
+    <div id="question7" class="question fade-out">
+      <p>Question 7: What is the smallest country in the world?</p>
+      <input type="radio" name="q7" value="1"> a) Vatican City<br>
+      <input type="radio" name="q7" value="2"> b) Monaco<br>
+      <input type="radio" name="q7" value="3"> c) Nauru<br>
+      <input type="radio" name="q7" value="4"> d) San Marino<br>
+      <button onclick="checkAnswer(7)" disabled>Next Question</button>
+    </div>
+    <div id="question8" class="question fade-out">
+      <p>Question 8: What is the tallest mountain in the world?</p>
+      <input type="radio" name="q8" value="1"> a) Mount Everest<br>
+      <input type="radio" name="q8" value="2"> b) K2<br>
+      <input type="radio" name="q8" value="3"> c) Kangchenjunga<br>
+      <input type="radio" name="q8" value="4"> d) Lhotse<br>
+      <button onclick="checkAnswer(8)" disabled>Submit</button>
+    </div>
     <div id="result"></div>
   </div>
   <script>
@@ -128,7 +160,7 @@
         return;
       }
 
-      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 2 : 2;
+      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 2 : questionNumber === 4 ? 2 : questionNumber === 5 ? 2 : questionNumber === 6 ? 2 : questionNumber === 7 ? 1 : 1;
       
       if (selectedAnswer.value == correctAnswer) {
         score++;
@@ -150,7 +182,7 @@
         nextQuestionButton.disabled = false;
       } else {
         const resultDiv = document.getElementById('result');
-        const percent = Math.round((score / 4) * 100);
+        const percent = Math.round((score / 8) * 100);
         let grade;
 
         if (percent >= 90) {
@@ -165,7 +197,7 @@
           grade = 'F';
         }
 
-        resultDiv.textContent = `Your score is ${score}/4 (${percent}%), Grade: ${grade}`;
+        resultDiv.textContent = `Your score is ${score}/8 (${percent}%), Grade: ${grade}`;
       }
     }
   </script>
