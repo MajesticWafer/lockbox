@@ -44,6 +44,8 @@
       font-weight: bold;
       margin-top: 20px;
       color: #673bb8;
+      text-align: center;
+      font-size: 24px;
     }
   </style>
 </head>
@@ -94,7 +96,7 @@
         return;
       }
 
-      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 2 : 3;
+      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 2 : 2;
       
       if (selectedAnswer.value == correctAnswer) {
         score++;
