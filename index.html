@@ -235,17 +235,26 @@
 
           if (percent >= 90) {
             grade = 'A';
+            code = '6418';
           } else if (percent >= 80) {
             grade = 'B';
+            code = '641-';
+            retry = 'Try again and get a better grade to obtain the full code!';
           } else if (percent >= 70) {
             grade = 'C';
+            code = '64--';
+            retry = 'Try again and get a better grade to obtain the full code!';
           } else if (percent >= 60) {
             grade = 'D';
+            code = '6---';
+            retry = 'Try again and get a better grade to obtain the full code!';
           } else {
             grade = 'F';
+            code = '----';
+            retry = 'Try again and get a better grade to obtain the full code!';
           }
 
-          resultDiv.textContent = `Your score is ${score}/12 (${percent}%), Grade: ${grade}`;
+          resultDiv.textContent = `Your score is ${score}/12 (${percent}%), Grade: ${grade}. The code is ${code}! ${retry}`;
         }
       });
     }
