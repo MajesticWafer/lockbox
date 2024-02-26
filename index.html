@@ -120,16 +120,16 @@
     <div id="question3" class="question fade-out">
       <p>Question 3: What chemical maintains the stability of the atmosphere?</p>
       <input type="radio" name="q3" value="1"> a) Carbon Monoxide<br>
-      <input type="radio" name="q3" value="2"> b) Hydroxyl radical<br>
-      <input type="radio" name="q3" value="3"> c) Vinyl chloride<br>
+      <input type="radio" name="q3" value="2"> b) Vinyl chloride<br>
+      <input type="radio" name="q3" value="3"> c) Hydroxyl radical<br>
       <input type="radio" name="q3" value="4"> d) Sulfur dioxide<br>
       <button onclick="checkAnswer(3)" disabled>Next Question</button>
     </div>
     <div id="question4" class="question fade-out">
       <p>Question 4: What continent was the “ozone hole” over?</p>
       <input type="radio" name="q4" value="1"> a) North America<br>
-      <input type="radio" name="q4" value="2"> b) Antartica<br>
-      <input type="radio" name="q4" value="3"> c) Europe<br>
+      <input type="radio" name="q4" value="2"> b) Europe<br>
+      <input type="radio" name="q4" value="3"> c) Antartica<br>
       <input type="radio" name="q4" value="4"> d) Africa<br>
       <button onclick="checkAnswer(4)" disabled>Submit</button>
     </div>
@@ -144,9 +144,9 @@
     <div id="question6" class="question fade-out">
       <p>Question 6: What does UV stand for?</p>
       <input type="radio" name="q6" value="1"> a) Ultraviolent<br>
-      <input type="radio" name="q6" value="2"> b) Ultraviolet<br>
+      <input type="radio" name="q6" value="2"> b) Usefulvolt<br>
       <input type="radio" name="q6" value="3"> c) Uppervolt<br>
-      <input type="radio" name="q6" value="4"> d) Usefulvolt<br>
+      <input type="radio" name="q6" value="4"> d) Ultraviolet<br>
       <button onclick="checkAnswer(6)" disabled>Next Question</button>
     </div>
     <div id="question7" class="question fade-out">
@@ -159,9 +159,9 @@
     </div>
     <div id="question8" class="question fade-out">
       <p>Question 8: Where do X-rays come from?</p>
-      <input type="radio" name="q8" value="1"> a) Exotic neutron stars<br>
+      <input type="radio" name="q8" value="1"> a) Supernovas<br>
       <input type="radio" name="q8" value="2"> b) Earth<br>
-      <input type="radio" name="q8" value="3"> c) Supernovas<br>
+      <input type="radio" name="q8" value="3"> c) Exotic neutron stars<br>
       <input type="radio" name="q8" value="4"> d) Our Sun<br>
       <button onclick="checkAnswer(8)" disabled>Submit</button>
     </div>
@@ -175,17 +175,17 @@
     </div>
     <div id="question10" class="question fade-out">
       <p>Question 10: What does our atmosphere cause Earth to be called?</p>
-      <input type="radio" name="q10" value="1"> a) Goldilocks planet<br>
-      <input type="radio" name="q10" value="2"> b) Good<br>
+      <input type="radio" name="q10" value="1"> a) Good<br>
+      <input type="radio" name="q10" value="2"> b) Goldilocks planet<br>
       <input type="radio" name="q10" value="3"> c) Life-sustaining planet<br>
       <input type="radio" name="q10" value="4"> d) Planet<br>
       <button onclick="checkAnswer(10)" disabled>Next Question</button>
     </div>
     <div id="question11" class="question fade-out">
       <p>Question 11: What is water vapor sometimes referred to as?</p>
-      <input type="radio" name="q11" value="1"> a) Feedback<br>
+      <input type="radio" name="q11" value="1"> a) Pattern<br>
       <input type="radio" name="q11" value="2"> b) Wetness<br>
-      <input type="radio" name="q11" value="3"> c) Pattern<br>
+      <input type="radio" name="q11" value="3"> c) Feedback<br>
       <input type="radio" name="q11" value="4"> d) Matter<br>
       <button onclick="checkAnswer(11)" disabled>Next Question</button>
     </div>
@@ -210,7 +210,7 @@
         return;
       }
 
-      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 2 : questionNumber === 4 ? 2 : questionNumber === 5 ? 2 : questionNumber === 6 ? 2 : questionNumber === 7 ? 1 : questionNumber === 8 ? 1 : questionNumber === 9 ? 4 : questionNumber === 10 ? 1 : questionNumber === 11 ? 1 : 1;
+      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 3 : questionNumber === 4 ? 3 : questionNumber === 5 ? 2 : questionNumber === 6 ? 4 : questionNumber === 7 ? 1 : questionNumber === 8 ? 3 : questionNumber === 9 ? 4 : questionNumber === 10 ? 2 : questionNumber === 11 ? 3 : 1;
       
       if (selectedAnswer.value == correctAnswer) {
         score++;
