@@ -100,63 +100,106 @@
   <div class="header-container">
     <h1 style="text-align: center; color: #777c7f;">Lockbox Challenge</h1>
   </div>
-  <div class="container" id="quizContainer">
+  <div class="container">
+    <div id="question1" class="question fade-in" style="display: block;">
+      <p>Question 1: What chemical in the atmosphere is essential for human life?</p>
+      <input type="radio" name="q1" value="1"> a) Nitrogen<br>
+      <input type="radio" name="q1" value="2"> b) Oxygen<br>
+      <input type="radio" name="q1" value="3"> c) Carbon Dioxide<br>
+      <input type="radio" name="q1" value="4"> d) Hydrogen<br>
+      <button onclick="checkAnswer(1)">Next Question</button>
+    </div>
+    <div id="question2" class="question fade-out">
+      <p>Question 2: What is the main purpose of the ozone layer?</p>
+      <input type="radio" name="q2" value="1"> a) Absorbing UV rays<br>
+      <input type="radio" name="q2" value="2"> b) Conserving Heat<br>
+      <input type="radio" name="q2" value="3"> c) Provide gravity<br>
+      <input type="radio" name="q2" value="4"> d) Regulate orbital status<br>
+      <button onclick="checkAnswer(2)" disabled>Next Question</button>
+    </div>
+    <div id="question3" class="question fade-out">
+      <p>Question 3: What chemical maintains the stability of the atmosphere?</p>
+      <input type="radio" name="q3" value="1"> a) Carbon Monoxide<br>
+      <input type="radio" name="q3" value="2"> b) Vinyl chloride<br>
+      <input type="radio" name="q3" value="3"> c) Hydroxyl radical<br>
+      <input type="radio" name="q3" value="4"> d) Sulfur dioxide<br>
+      <button onclick="checkAnswer(3)" disabled>Next Question</button>
+    </div>
+    <div id="question4" class="question fade-out">
+      <p>Question 4: What continent was the “ozone hole” over?</p>
+      <input type="radio" name="q4" value="1"> a) North America<br>
+      <input type="radio" name="q4" value="2"> b) Europe<br>
+      <input type="radio" name="q4" value="3"> c) Antartica<br>
+      <input type="radio" name="q4" value="4"> d) Africa<br>
+      <button onclick="checkAnswer(4)" disabled>Submit</button>
+    </div>
+    <div id="question5" class="question fade-out">
+      <p>Question 5: What is the Electromagnetic Spectrum?</p>
+      <input type="radio" name="q5" value="1"> a) The place in the North Pole that pulls compass pins<br>
+      <input type="radio" name="q5" value="2"> b) The entire range of light<br>
+      <input type="radio" name="q5" value="3"> c) A charger for a device<br>
+      <input type="radio" name="q5" value="4"> d) Radiation<br>
+      <button onclick="checkAnswer(5)" disabled>Next Question</button>
+    </div>
+    <div id="question6" class="question fade-out">
+      <p>Question 6: What does UV stand for?</p>
+      <input type="radio" name="q6" value="1"> a) Ultraviolent<br>
+      <input type="radio" name="q6" value="2"> b) Usefulvolt<br>
+      <input type="radio" name="q6" value="3"> c) Uppervolt<br>
+      <input type="radio" name="q6" value="4"> d) Ultraviolet<br>
+      <button onclick="checkAnswer(6)" disabled>Next Question</button>
+    </div>
+    <div id="question7" class="question fade-out">
+      <p>Question 7: What color of star is hottest?</p>
+      <input type="radio" name="q7" value="1"> a) Blue<br>
+      <input type="radio" name="q7" value="2"> b) Yellow<br>
+      <input type="radio" name="q7" value="3"> c) Red<br>
+      <input type="radio" name="q7" value="4"> d) White<br>
+      <button onclick="checkAnswer(7)" disabled>Next Question</button>
+    </div>
+    <div id="question8" class="question fade-out">
+      <p>Question 8: Where do X-rays come from?</p>
+      <input type="radio" name="q8" value="1"> a) Supernovas<br>
+      <input type="radio" name="q8" value="2"> b) Earth<br>
+      <input type="radio" name="q8" value="3"> c) Exotic neutron stars<br>
+      <input type="radio" name="q8" value="4"> d) Our Sun<br>
+      <button onclick="checkAnswer(8)" disabled>Submit</button>
+    </div>
+    <div id="question9" class="question fade-out">
+      <p>Question 9: Where do gamma rays come from?</p>
+      <input type="radio" name="q9" value="1"> a) Our Sun<br>
+      <input type="radio" name="q9" value="2"> b) Exotic neutron stars<br>
+      <input type="radio" name="q9" value="3"> c) Earth<br>
+      <input type="radio" name="q9" value="4"> d) Supernovas<br>
+      <button onclick="checkAnswer(9)" disabled>Next Question</button>
+    </div>
+    <div id="question10" class="question fade-out">
+      <p>Question 10: What does our atmosphere cause Earth to be called?</p>
+      <input type="radio" name="q10" value="1"> a) Good<br>
+      <input type="radio" name="q10" value="2"> b) Goldilocks planet<br>
+      <input type="radio" name="q10" value="3"> c) Life-sustaining planet<br>
+      <input type="radio" name="q10" value="4"> d) Planet<br>
+      <button onclick="checkAnswer(10)" disabled>Next Question</button>
+    </div>
+    <div id="question11" class="question fade-out">
+      <p>Question 11: What is water vapor sometimes referred to as?</p>
+      <input type="radio" name="q11" value="1"> a) Pattern<br>
+      <input type="radio" name="q11" value="2"> b) Wetness<br>
+      <input type="radio" name="q11" value="3"> c) Feedback<br>
+      <input type="radio" name="q11" value="4"> d) Matter<br>
+      <button onclick="checkAnswer(11)" disabled>Next Question</button>
+    </div>
+    <div id="question12" class="question fade-out">
+      <p>Question 12: What fraction of the Earth's mass is the atmosphere?</p>
+      <input type="radio" name="q12" value="1"> a) 1/1,000,000<br>
+      <input type="radio" name="q12" value="2"> b) 1/190<br>
+      <input type="radio" name="q12" value="3"> c) 5/643<br>
+      <input type="radio" name="q12" value="4"> d) 1/100,000<br>
+      <button onclick="checkAnswer(12)" disabled>Submit</button>
+    </div>
     <div id="result"></div>
   </div>
   <script>
-    let questions = [
-      {
-        question: "What chemical in the atmosphere is essential for human life?",
-        options: [
-          "a) Nitrogen",
-          "b) Oxygen",
-          "c) Carbon Dioxide",
-          "d) Hydrogen"
-        ],
-        correctAnswer: 2
-      },
-      {
-        question: "What is the main purpose of the ozone layer?",
-        options: [
-          "a) Absorbing UV rays",
-          "b) Conserving Heat",
-          "c) Provide gravity",
-          "d) Regulate orbital status"
-        ],
-        correctAnswer: 1
-      },
-      // Add more questions here
-    ];
-
-    // Shuffle function
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
-
-    // Shuffle the questions
-    shuffle(questions);
-
-    const quizContainer = document.getElementById('quizContainer');
-    questions.forEach((question, index) => {
-      const questionDiv = document.createElement('div');
-      questionDiv.id = `question${index + 1}`;
-      questionDiv.classList.add('question');
-      if (index === 0) {
-        questionDiv.classList.add('fade-in');
-        questionDiv.style.display = 'block';
-      }
-      const options = question.options.map(option => `<input type="radio" name="q${index + 1}" value="${option}" /> ${option}<br>`);
-      questionDiv.innerHTML = `
-        <p>Question ${index + 1}: ${question.question}</p>
-        ${options.join('')}
-        <button onclick="checkAnswer(${index + 1})">${index === questions.length - 1 ? 'Submit' : 'Next Question'}</button>
-      `;
-      quizContainer.appendChild(questionDiv);
-    });
-
     let score = 0;
 
     function checkAnswer(questionNumber) {
@@ -167,10 +210,9 @@
         return;
       }
 
-      const selectedOption = selectedAnswer.value;
-      const correctAnswer = questions[questionNumber - 1].options[questions[questionNumber - 1].correctAnswer - 1];
-
-      if (selectedOption === correctAnswer) {
+      const correctAnswer = questionNumber === 1 ? 2 : questionNumber === 2 ? 1 : questionNumber === 3 ? 3 : questionNumber === 4 ? 3 : questionNumber === 5 ? 2 : questionNumber === 6 ? 4 : questionNumber === 7 ? 1 : questionNumber === 8 ? 3 : questionNumber === 9 ? 4 : questionNumber === 10 ? 2 : questionNumber === 11 ? 3 : 1;
+      
+      if (selectedAnswer.value == correctAnswer) {
         score++;
       }
 
@@ -184,9 +226,11 @@
           nextQuestionDiv.style.display = 'block';
           nextQuestionDiv.classList.remove('fade-out');
           nextQuestionDiv.classList.add('fade-in');
+          const nextQuestionButton = nextQuestionDiv.querySelector('button');
+          nextQuestionButton.disabled = false;
         } else {
           const resultDiv = document.getElementById('result');
-          const percent = Math.round((score / questions.length) * 100);
+          const percent = Math.round((score / 12) * 100);
           let grade;
 
           if (percent >= 90) {
@@ -211,7 +255,7 @@
             retry = 'Try again and get a better grade to obtain the full code!';
           }
 
-          resultDiv.textContent = `Your score is ${score}/${questions.length} (${percent}%), Grade: ${grade}. The code is ${code}! ${retry}`;
+          resultDiv.textContent = `Your score is ${score}/12 (${percent}%), Grade: ${grade}. The code is ${code}! ${retry}`;
         }
       });
     }
